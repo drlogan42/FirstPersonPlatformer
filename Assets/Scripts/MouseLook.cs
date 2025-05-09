@@ -10,6 +10,10 @@ public class MouseLook : MonoBehaviour
     public InputActionProperty Look;            //Look is defined for input actions in InputSystem_Actions
     public InputSystem_Actions playerControls;  //playerControls as the input system actions (assigning keybinds)
     Vector2 lookDirection = Vector2.zero;       //Empty vector 2 initialized for lookDirection
+    private void Awake()
+    {
+        playerControls = new InputSystem_Actions();     //On load set player controls (part of player movement) to the InputSystem_Actions
+    }
 
     private void Start()
     {
