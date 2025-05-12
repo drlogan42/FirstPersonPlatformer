@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void handleSprint()                                 //If sprint button pressed or held, multiply speed by multiplier else regular speed
     {
-        Debug.Log(playerSpeed);
+        //Debug.Log(playerSpeed);
         isSprinting = (Sprint.action.IsPressed());
         if (isSprinting)
         {
