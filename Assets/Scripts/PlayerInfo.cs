@@ -8,13 +8,15 @@ public class PlayerInfo : MonoBehaviour
 
     [SerializeField] string playerTag = "Player";
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (other.CompareTag("Obstacle"))
         {
             Health -= 20;
+            Debug.Log("Damage from obstacle trigger.");
         }
     }
+
 
 
     // Update is called once per frame
