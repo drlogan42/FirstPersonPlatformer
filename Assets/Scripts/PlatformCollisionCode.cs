@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.Serialization;
-
+using UnityEngine.SceneManagement;
 public class PlatformCollisionCode : MonoBehaviour
 {
     [SerializeField] string playerTag = "Player";
