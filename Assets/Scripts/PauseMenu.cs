@@ -104,11 +104,11 @@ public class PauseMenu : MonoBehaviour
 
     public void SetVolume (float volume)
     {
-        Debug.Log(volume);
+       //Debug.Log(volume);
     }
     public void SetSens(float Sens)
     {
-        Debug.Log(Sens);
+        //Debug.Log(Sens);
     }
 
 }

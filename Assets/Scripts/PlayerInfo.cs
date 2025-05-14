@@ -1,40 +1,16 @@
+using UnityEditor.Build;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class PlayerInfo : MonoBehaviour
+[CreateAssetMenu(fileName = "PlayerInformation", menuName = "Player / Player Info")]
+public class PlayerInformation : ScriptableObject
 {
-    //Health and Gems and death
-    public int Health = 100;
+    public int health = 100;
+    public int lives = 3;
+    public int jewels = 0;
+    public bool hasCheckpoint = false;
 
-    [SerializeField] string playerTag = "Player";
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Obstacle"))
-        {
-            Health -= 20;
-            Debug.Log("Damage from obstacle trigger.");
-        }
-    }
-
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log(Health);
-
-        if (Health <= 0)
-        {
-            Debug.Log("Game Over");
-            OnGameOver();
-        }
-    }
-
-    private void OnGameOver()
-    {
-        SceneManager.LoadScene(3);
-    }
-
-
+    //If main menu then reset checkpoint, lives and health
+    
 }
+
+

@@ -3,24 +3,24 @@ using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.SceneManagement;
 
-public class PlayerDetectDoor : MonoBehaviour
+public class SecretDetect : MonoBehaviour
 {
     public PlayerDetectionZone detectZone; // Assign in Inspector
     [SerializeField] string playerTag = "Player";
-    [SerializeField] Transform DetectionZone;
+    [SerializeField] Transform detectionSecret;
+
 
     private void Awake()
     {
-        detectZone.hasEnteredZone = false;
         detectZone.secretObtained = false;
+
     }
 
-    private void OnTriggerEnter(Collider DetectionZone)
+    private void OnTriggerEnter(Collider DetectionSecret)
     {
-        if (DetectionZone.gameObject.tag == playerTag)
+        if (DetectionSecret.gameObject.tag == playerTag)
         {
-            detectZone.hasEnteredZone = true;
-            SceneManager.LoadScene(4);
+            detectZone.secretObtained = true;
 
         }
     }
