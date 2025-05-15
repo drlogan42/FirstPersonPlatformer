@@ -10,7 +10,7 @@ public class MovingPlatformA : MonoBehaviour
     public float delay = 1.0f;
     [SerializeField] GameObject platform;
     private Vector3 targetPositionA;
-    [SerializeField] private ButtonPress buttonScript;
+    //[SerializeField] private ButtonPress buttonScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,7 +23,7 @@ public class MovingPlatformA : MonoBehaviour
 
     IEnumerator MovePlatform()
     {
-        yield return new WaitUntil(() => buttonScript != null && buttonScript.ButtonPressDown);
+        yield return new WaitUntil(() => GameManager.Instance.buttonPressed == true);
 
         while (true)
         {

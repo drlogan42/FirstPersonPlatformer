@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.CompareTag("Checkpoint"))
         {
-            playerInfo.hasCheckpoint = true;
+            //playerInfo.hasCheckpoint = true;
         }
     }
     void Update()
@@ -46,11 +46,11 @@ public class PlayerController : MonoBehaviour
         playerInfo.health = 100;
         if (playerInfo.hasCheckpoint == true)
         {
-            playerPosition.transform.position = new Vector3(94, 47, 100);
+           // playerPosition.transform.position = new Vector3(94, 47, 100);
         }
         else
         {
-            playerPosition.transform.position = new Vector3(0, 3, 0);
+           // playerPosition.transform.position = new Vector3(0, 3, 0);
 
         }
 

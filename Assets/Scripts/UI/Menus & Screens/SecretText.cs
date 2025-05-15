@@ -7,7 +7,7 @@ public class SecretText : MonoBehaviour
     [SerializeField] private TextMeshProUGUI messageText; // Drag from Canvas
 
     void Start()
-    {        textMeshProGameObject.SetActive(true); // Make the text active
+    {        //textMeshProGameObject.SetActive(true); // Make the text active
 
         messageText.gameObject.SetActive(true);
     }
