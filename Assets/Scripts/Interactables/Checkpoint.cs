@@ -3,7 +3,7 @@ public class Checkpoint : Interactable
 {
     public override void Pickup()
     {
-        GameResources.Instance.SpawnPoint.position = this.gameObject.transform.position;
-        Debug.Log("Spawn point is now: " + GameResources.Instance.SpawnPoint.position);
+        UIMananger.Instance.SpawnPoint.position = this.gameObject.transform.position + new Vector3(0, 3, 0);
+        Debug.Log("Spawn point is now: " + UIMananger.Instance.SpawnPoint.position);
     }
 }

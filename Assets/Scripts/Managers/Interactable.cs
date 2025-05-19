@@ -8,11 +8,11 @@ public class Interactable : MonoBehaviour
 
     }
 
-    public virtual void Press()
+    public virtual void Enter()
     {
 
     }
-    public virtual void Release()
+    public virtual void Exit()
     {
 
     }

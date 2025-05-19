@@ -19,10 +19,6 @@ public class PlayerController : MonoBehaviour
             playerInfo.health -= 50;
         }
 
-        if (other.CompareTag("Checkpoint"))
-        {
-            //playerInfo.hasCheckpoint = true;
-        }
     }
     void Update()
     {
@@ -30,8 +26,6 @@ public class PlayerController : MonoBehaviour
         {
             OnLoseLife();
         }
-
-
 
         if (playerInfo.health <= 0)
         {
@@ -44,15 +38,7 @@ public class PlayerController : MonoBehaviour
     {
         playerInfo.lives -= 1;
         playerInfo.health = 100;
-        if (playerInfo.hasCheckpoint == true)
-        {
-           // playerPosition.transform.position = new Vector3(94, 47, 100);
-        }
-        else
-        {
-           // playerPosition.transform.position = new Vector3(0, 3, 0);
-
-        }
+        playerPosition.transform.position = UIMananger.Instance.SpawnPoint.position;
 
         if (playerInfo.lives <= 0)
         {

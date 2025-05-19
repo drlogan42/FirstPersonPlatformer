@@ -5,15 +5,11 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-
 public class PauseMenu : MonoBehaviour
 {
     public InputSystem_Actions UIControls;
     public InputActionProperty Pause;
     public GameObject pauseMenuUI;
-    //public AudioMixer audioMixer;
-
-    public GameSettings settings; // Drag the shared asset in the Inspector
     public Slider sensitivitySlider;
     public Slider volumeSlider;               // Assign in Inspector
 
@@ -35,22 +31,22 @@ public class PauseMenu : MonoBehaviour
     private void Start()
     {
         // Initialize the slider's value from the ScriptableObject
-        sensitivitySlider.value = settings.sensitivity;
+        sensitivitySlider.value = GameResources.Instance.sensitivity;
 
         // Add listener so changing the slider updates the shared value
         sensitivitySlider.onValueChanged.AddListener(OnSliderChanged);
 
-        volumeSlider.value = settings.volume;
+        volumeSlider.value = GameResources.Instance.volume;
         volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
     private void OnSliderChanged(float value)
     {
-        settings.sensitivity = value;
+        GameResources.Instance.sensitivity = value;
     }
 
     private void OnVolumeChanged(float value)
     {
-        settings.volume = value;
+        GameResources.Instance.volume = value;
     }
 
     public static bool isPaused = false;
@@ -100,15 +96,6 @@ public class PauseMenu : MonoBehaviour
         #else
                     Application.Quit();        
         #endif
-    }
-
-    public void SetVolume (float volume)
-    {
-       //Debug.Log(volume);
-    }
-    public void SetSens(float Sens)
-    {
-        //Debug.Log(Sens);
     }
 
 }

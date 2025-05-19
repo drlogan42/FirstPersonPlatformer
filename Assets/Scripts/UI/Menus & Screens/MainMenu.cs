@@ -8,27 +8,29 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameSettings settings;
     public Slider sensitivitySlider;
     public Slider volumeSlider;               // Assign in Inspector
 
 
     private void Start()
     {
-        sensitivitySlider.value = settings.sensitivity;
+        sensitivitySlider.value = GameResources.Instance.sensitivity;
         sensitivitySlider.onValueChanged.AddListener(OnSliderChanged);
 
-        volumeSlider.value = settings.volume;
+        volumeSlider.value = GameResources.Instance.volume;
         volumeSlider.onValueChanged.AddListener(OnVolumeChanged);
     }
 
     private void OnSliderChanged(float value)
     {
-        settings.sensitivity = value;
+        GameResources.Instance.sensitivity = value;
     }
     public void playGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        GameResources.Instance.Health = 100;
+        GameResources.Instance.LifeCount = 3;
+        GameResources.Instance.JewelCount = 0;
     }
 
     public void quitGame()
@@ -38,7 +40,7 @@ public class MainMenu : MonoBehaviour
     }
     private void OnVolumeChanged(float value)
     {
-        settings.volume = value;
+        GameResources.Instance.volume = value;
     }
 }
 

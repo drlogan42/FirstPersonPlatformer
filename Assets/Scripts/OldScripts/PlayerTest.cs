@@ -10,7 +10,7 @@ public class PlayerTest : MonoBehaviour
         {
             currentItem = i;
             i.Pickup();
-            i.Press();
+            i.Enter();
         }
     }
     void OnTriggerExit(Collider other)
@@ -20,14 +20,14 @@ public class PlayerTest : MonoBehaviour
             if (i != null)
             {
                 currentItem = i;
-                i.Release();
+                i.Exit();
             }
         }
     }
 
     private void Start()
     {
-        Debug.Log("Spawn point is now: " + GameResources.Instance.SpawnPoint.position);
+        Debug.Log("Spawn point is now: " + UIMananger.Instance.SpawnPoint.position);
     }
 
 }

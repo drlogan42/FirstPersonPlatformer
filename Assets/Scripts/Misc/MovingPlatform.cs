@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class MovingPlatformA : MonoBehaviour
+public class MovingPlatform : MonoBehaviour
 {
     [SerializeField] GameObject pointA;
     [SerializeField] GameObject pointB;
@@ -10,15 +10,11 @@ public class MovingPlatformA : MonoBehaviour
     public float delay = 1.0f;
     [SerializeField] GameObject platform;
     private Vector3 targetPositionA;
-    //[SerializeField] private ButtonPress buttonScript;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         platform.transform.position = pointA.transform.position;
         targetPositionA = pointB.transform.position;
         StartCoroutine(MovePlatform());
-
     }
 
     IEnumerator MovePlatform()

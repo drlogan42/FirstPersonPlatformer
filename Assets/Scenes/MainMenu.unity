@@ -876,6 +876,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621851526}
   m_CullTransparentMesh: 1
+--- !u!1 &644332738
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 644332740}
+  - component: {fileID: 644332739}
+  m_Layer: 0
+  m_Name: GameResourcesDontDestroyOnLoad
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &644332739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644332738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a87b3d3020687428de70fb00268f6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  JewelCount: 0
+  Health: 0
+  LifeCount: 0
+  SpawnPoint: {fileID: 0}
+  sensitivity: 75
+  volume: 0
+--- !u!4 &644332740
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644332738}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.5078165, y: 2.1795845, z: 2.5507836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &651934503
 GameObject:
   m_ObjectHideFlags: 0
@@ -2078,7 +2128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55548aa70b465c7489fde7fef99d3afb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: d6839fb3b459d1a46b0ed7f49d14b2ec, type: 2}
   sensitivitySlider: {fileID: 1324150898}
   volumeSlider: {fileID: 196476465}
 --- !u!1 &1580720902
@@ -3007,3 +3056,4 @@ SceneRoots:
   - {fileID: 1870262419}
   - {fileID: 690654933}
   - {fileID: 740215088}
+  - {fileID: 644332740}
